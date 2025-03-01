@@ -50,25 +50,11 @@ function updateStars() {
 
 const button = document.getElementById("valentinesButton");
 
-button.addEventListener("click", () => {
-  if (button.textContent === "Click Me! ❤") {
-    button.textContent = "loading...";
-    fetch('send_mail.php')
-      .then(response => {
-        if (response.ok) {
-          button.textContent = "ehehehe";
-        } else {
-          console.error('Failed to send email');
-          button.textContent = "Error 😞";
-        }
-      })
-      .catch(error => {
-        // Handle network errors or other issues
-        console.error('Error:', error);
-        button.textContent = "Error 😞";
-      });
-  }
-});
+button.textContent = "love you ❤"; // Set button text
+        button.className = "valentines-button"; // Add CSS class for styling
+
+        // Append the button to the body
+        document.body.appendChild(button);
 
 function drawTextWithLineBreaks(lines, x, y, fontSize, lineHeight) {
     lines.forEach((line, index) => {
